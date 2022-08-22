@@ -14,9 +14,7 @@ const App = () =>{
 
   const [text, setText] = useState([]);
 
-  // const result = text.filter((e) => (e.title === title) && (e.content === content) && (e.tag == tag));
-  const result_ex = [{title : '제목', content : '내용', tag : '1,2,3'}];
-  const [result, setResult] = useState(result_ex)
+  const [result, setResult] = useState([{title : '제목', content : '내용', tag : '1,2,3'}]);
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/note/")
@@ -46,6 +44,9 @@ const App = () =>{
   };
 
   const clickHandler_Search = () =>{
+    // 입력 형태 검사
+    // 형태가 이상하면 alert
+    // 형태가 제대로 되있다면 search
     console.log("Search");
     console.log(tag);
     const url = "http://127.0.0.1:8000/note/?search="+tag;
@@ -58,16 +59,11 @@ const App = () =>{
       });
     console.log(text);
     setResult(text);
-    // 입력 형태 검사
-    // 형태가 이상하면 alert
-    // 형태가 제대로 되있다면 search
-
   };
 
   return (
     <div className="App">
       <h1>MEMO</h1>
-
 
       <div className = "form-style pb-3">
         <a>Search by  </a>
@@ -83,20 +79,6 @@ const App = () =>{
       <div className = "memo-list">
         {result.map(memo => <Box title={memo.title} content={memo.content} tag={memo.tag} />)}
       </div>
-
-      {/* <div>
-        <BrowserRouter>
-          <Routes>      
-            <Route
-              path="/App"
-              exact
-              render={result.map(memo => <Box title={memo.title} content={memo.content} tag={memo.tag} />)}
-            />
-            <Route path="/detail" component={Detail}/>
-          </Routes>
-        </BrowserRouter>
-      </div> */}
-
 
       <div className = "plus">
         <Link to= '/new'>
