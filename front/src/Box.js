@@ -2,12 +2,13 @@ import React from 'react'
 import './Box.css'
 import { Link } from "react-router-dom";
 
-const Box = ({title, content, tag}) => {
+const Box = ({id, title, content, tag}) => {
     return (
         <div>
             <Link 
                 to = '/detail'
                 state = {{
+                    id : {id},
                     title: {title},
                     content: {content},
                     tag: {tag},

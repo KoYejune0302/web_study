@@ -2,32 +2,25 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Box from './Box.js'
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const App = () =>{
 
   const [inputList, setInputList] = useState({tag : ""});
   const {tag} = inputList;
 
-  const [text, setText] = useState([]);
-
-  const [result, setResult] = useState([{title : '제목', content : '내용', tag : '1,2,3'}]);
+  const [result, setResult] = useState([{title : '', content : '', tag : ''}]);
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/note/")
       .then((response) => {
-      setText([...response.data]);
+      setResult([...response.data]);
       })
       .catch(function (error) {
       console.log(error);
       });
-  
-    console.log('second');
-    setResult(text);
 
     return () => {
-      console.log('first');
-      setResult(text);
     }
   }, []);
 
@@ -49,13 +42,11 @@ const App = () =>{
     const url = "http://127.0.0.1:8000/note/?search="+tag;
     axios.get(url)
       .then((response) => {
-      setText([...response.data]);
+      setResult([...response.data]);
       })
       .catch(function (error) {
       console.log(error);
       });
-    console.log(text);
-    setResult(text);
   };
 
   return (
@@ -74,7 +65,7 @@ const App = () =>{
       </div>
 
       <div className = "memo-list">
-        {result.map(memo => <Box title={memo.title} content={memo.content} tag={memo.tag} />)}
+        {result.map(memo => <Box id = {memo.id} title={memo.title} content={memo.content} tag={memo.tag} />)}
       </div>
 
       <div className = "plus">

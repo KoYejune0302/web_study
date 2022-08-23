@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-l=6q7oij(zv%qd3e(nm71*ev0*@f6+1l-4@hubvx_2&r-l#yo3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -62,6 +62,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'web_study.urls'
 
