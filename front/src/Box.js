@@ -1,8 +1,6 @@
 import React from 'react'
 import './Box.css'
-import Detail from './Detail.js'
-import { withRouter } from "react-router";
-import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Box = ({title, content, tag}) => {
     return (

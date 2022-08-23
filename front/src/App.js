@@ -2,10 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Box from './Box.js'
-import Detail from './Detail.js'
-import New from './New.js'
-import { withRouter } from "react-router";
-import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const App = () =>{
 
