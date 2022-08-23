@@ -33,6 +33,11 @@ const App = () =>{
     console.log("ADD");
   };
 
+  const clickHandler_re = () =>{
+    console.log("Re");
+    tag = "";
+  };
+
   const clickHandler_Search = () =>{
     // 입력 형태 검사
     // 형태가 이상하면 alert
@@ -51,7 +56,9 @@ const App = () =>{
 
   return (
     <div className="App">
-      <h1 className="first">MEMO</h1>
+      <Link to='/' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}} onClick={clickHandler_re}>
+        <h1 className="first">MEMO</h1>
+      </Link>
 
       <div className = "form-style pb-3">
         <a>Search by  </a>
@@ -67,7 +74,7 @@ const App = () =>{
       <div className = "memo-list">
         {result.map(memo => <Box id = {memo.id} title={memo.title} content={memo.content} tag={memo.tag} />)}
       </div>
-      
+
       <div className = "plus">
         <Link to= '/new' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}>
           <button type='button' className='w-btn w-btn-gra1 btn-holder' onClick={clickHandler_Add}>Add MEMO</button>
