@@ -51,7 +51,7 @@ const App = () =>{
 
   return (
     <div className="App">
-      <h1>MEMO</h1>
+      <h1 className="first">MEMO</h1>
 
       <div className = "form-style pb-3">
         <a>Search by  </a>
@@ -61,16 +61,16 @@ const App = () =>{
           name = "tag"
           onChange = {changed}
         ></input>
-        <button type='button' className='w-btn w-btn-gra1' onClick={clickHandler_Search}>Search</button>
+        <button type='button' className='search' onClick={clickHandler_Search}>→</button>
       </div>
 
       <div className = "memo-list">
         {result.map(memo => <Box id = {memo.id} title={memo.title} content={memo.content} tag={memo.tag} />)}
       </div>
-
+      
       <div className = "plus">
-        <Link to= '/new'>
-          <button type='button' className='w-btn w-btn-gra1 plus' onClick={clickHandler_Add}>Add MEMO</button>
+        <Link to= '/new' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}>
+          <button type='button' className='w-btn w-btn-gra1 btn-holder' onClick={clickHandler_Add}>Add MEMO</button>
         </Link>
       </div>
 

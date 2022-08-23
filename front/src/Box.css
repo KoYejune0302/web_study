@@ -1,6 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
 .Box {
-    border: 1px solid gray;
+    text-align: left;
+    font-family: 'Nanum Myeongjo', serif;
+    border: 1px solid #99A799;
     border-radius: 10px;
     margin: 10px 25px;
     padding: 5px 20px;
+    text-decoration : none;
+    width:30%;
+    height:110px;
+    box-sizing: border-box;
+    float: left;
+    color: #224B0C;
+}
+
+.title{
+    font-size : 16px;
+    text-align : left;
+    text-decoration-line : none;
+    font-weight:bold;
+}
+
+.tag{
+    font-size : 12px;
+    text-align : left;
+    text-decoration-line : none;
 }

@@ -32,7 +32,7 @@ const Detail = () => {
                 <p className = "content">{content.content}</p>
                 <p className = "tag">{tag.tag}</p>
             </div>
-            <Link to = '/'>
+            <Link to = '/' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <button onClick={clickHandler_Delete}>Delete MEMO</button>
             </Link>
         </div>

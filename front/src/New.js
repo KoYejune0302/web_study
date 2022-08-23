@@ -48,7 +48,7 @@ const New = () => {
                 onChange={changed}
             ></input>
             <br></br>
-            <Link to='/'>
+            <Link to='/' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <button onClick={clickHandler_Add}>Add MEMO</button>
             </Link>
         </div>

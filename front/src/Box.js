@@ -14,9 +14,10 @@ const Box = ({id, title, content, tag}) => {
                     tag: {tag},
                     }
                 }
+                clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}
             >
                 <div className = "Box">
-                    <h4 className = "title">{title}</h4>
+                    <p className = "title">{title}</p>
                     {/* <p className = "content">{content}</p> */}
                     <p className = "tag">{tag}</p>
                 </div>

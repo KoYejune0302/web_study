@@ -1,51 +1,79 @@
-/* .pb-3{
-  text-align:left;
-} */
+.App{
+  background-color : #FEF5ED;
+}
+
+.first{
+  align-items: center;
+  text-align: center;
+  color: #D3E4CD;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.pb-3{
+  text-align:center;
+  color: #ADC2A9;
+  font-size: 20px;
+}
 
 .form-style input{
   font-family: 'Nanum Myeongjo', serif;
-  font-size: 16px;
+  font-size: 18px;
   border: 0;
   height: 50px;
   width: 255px;
   border-radius: 0;
-  border-bottom:1px solid #fafafa;
+  border-bottom:1px solid #D3E4CD;
   margin-bottom:1px;
+  background-color: #FEF5ED;
 }
 
 .form-style input:focus{
   font-family: 'Nanum Myeongjo', serif;
-  border-bottom: 1px solid #007bff;
+  border-bottom: 1px solid #ADC2A9;
   box-shadow: none;
   outline: 0;
-  background-color: #fafafa;
+  background-color: #F0EBE3;
 }
 
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 
-button{
-  font-family: 'Nanum Myeongjo', serif;
-  font-size: 20px;
-  height: 40px;
-  width: 200px;
-  margin:20px;
-  text-align: center;
-  vertical-align: center;
-  padding: 100px;
-  background: whitesmoke;
-  display: table-cell;
+.search {
+  position:relative;
+  border: none;
+  display: inline-block;
+  padding: 5px 15px;
+  /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); */
+  text-decoration: none;
+  font-weight: 300;
+  transition: 0.25s;
+  background-color: #FEF5ED;
+  margin-left: 10px;
+  color: #ADC2A9; 
+  font-size: 18px;
+}
+
+.search:hover {
+  letter-spacing: 2px;
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .w-btn {
-  position: relative;
+  height:60px;
+  position : relative;
+  margin:auto;
+  display:block;
   border: none;
-  display: inline-block;
   padding: 5px 15px;
   border-radius: 15px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   font-weight: 300;
   transition: 0.25s;
+  white-space: normal;
+  font-size: 16px;
+  clear: both;
 }
 
 .w-btn:active {
@@ -59,21 +87,14 @@ button{
 }
 
 .w-btn-gra1 {
-  background: linear-gradient(-45deg, #33ccff 0%, #ff99cc 100%);
+  background: linear-gradient(-45deg, #ADC2A9 0%, #D3E4CD 100%);
   color: white;
 }
 
-.plus {
-  align-items: center;
+.plus{
+  float: inline-start;
 }
 
-.memo-list {
-  white-space : nowrap;
-  display: inline-block;
-}
-
-.App {
-  /* display: flex;
-  justify-content: center; */
-  align-items: center;
+.Link {
+  text-decoration : none;
 }
