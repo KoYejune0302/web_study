@@ -2,7 +2,7 @@
     margin-bottom: 1%;
 }
 
-.New input{
+.New{
     font-family: 'Nanum Myeongjo', serif;
     font-size: 18px;
     border: 0;
@@ -10,18 +10,42 @@
     width: 255px;
     border-radius: 0;
     border-bottom:1px solid #D3E4CD;
-    margin-bottom:1px;
+    margin-bottom:2px;
     background-color: rgba(254,245,237,0.1);
     padding-left:1%;
 }
   
-.New input:focus{
+.New:focus{
     font-family: 'Nanum Myeongjo', serif;
     border-bottom: 1px solid #ADC2A9;
     box-shadow: none;
     outline: 0;
-    background-color: #F0EBE3;
+    background-color: rgba(254,245,237,0.5);
 }
+
+.content {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 18px;
+    border: 0;
+    height: 200px;
+    width: 255px;
+    border-radius: 0;
+    border-bottom:1px solid #D3E4CD;
+    margin-bottom:1px;
+    background-color: rgba(254,245,237,0.1);
+    padding-left:1%;
+    resize: none;
+    margin-top: 1%;
+}
+
+.content:focus{
+    font-family: 'Nanum Myeongjo', serif;
+    border-bottom: 1px solid #ADC2A9;
+    box-shadow: none;
+    outline: 0;
+    background-color: rgba(254,245,237,0.5);
+}
+
 
 .btn {
     position:relative;

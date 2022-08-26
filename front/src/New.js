@@ -40,26 +40,29 @@ const New = ({setModal}) => {
         <div className = 'Modal' onCLick={()=> setModal(false)}>
             <div className = 'modalBody'>
                 <p className = "space"></p>
-                <div className = "New">
+                <div>
                     <input
                         value={title}
                         placeholder="Title"
                         name="title"
                         onChange={changed}
+                        className = 'New'
                     ></input>
                     <br></br>
-                    <input
+                    <textarea
                         value={content}
                         placeholder="Content"
                         name="content"
                         onChange={changed}
-                    ></input>
+                        className = 'content'
+                    ></textarea>
                     <br></br>
                     <input 
                         value={tag}
                         placeholder="#tag"
                         name="tag"
                         onChange={changed}
+                        className = 'New'
                     ></input>
                     <br></br>
                     <button onClick={()=> setModal(false)} className = 'btn'>←</button>
