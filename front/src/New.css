@@ -11,7 +11,7 @@
     border-radius: 0;
     border-bottom:1px solid #D3E4CD;
     margin-bottom:1px;
-    background-color: #FEF5ED;
+    background-color: rgba(254,245,237,0.1);
     padding-left:1%;
 }
   
@@ -23,7 +23,7 @@
     background-color: #F0EBE3;
 }
 
-.Back {
+.btn {
     position:relative;
     border: none;
     display: inline-block;
@@ -32,41 +32,39 @@
     text-decoration: none;
     font-weight: 300;
     transition: 0.25s;
-    background-color: #FEF5ED;
+    background-color: rgba(254,245,237,0.1);
     color: #ADC2A9; 
     font-size: 18px;
     align-items: center;
     text-align: center;
-    margin-right:1%;
+    margin-left:1%;
     margin-top:1%;
 }
   
-.Back:hover {
+.btn:hover {
     letter-spacing: 2px;
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }
 
-.Add {
-    position:relative;
-    border: none;
-    display: inline-block;
-    padding: 5px 15px;
-    padding-left:1%;
-    text-decoration: none;
-    font-weight: 300;
-    transition: 0.25s;
-    background-color: #FEF5ED;
-    color: #ADC2A9; 
-    font-size: 18px;
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-    margin-right:1%;
-    margin-top:1%;
 }
-  
-.Add:hover {
-    letter-spacing: 2px;
-    transform: scale(1.1);
-    cursor: pointer;
+
+.modalBody {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    padding: 40px;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
 }

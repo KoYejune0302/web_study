@@ -1,9 +1,8 @@
 import React, {useState} from "react";
 import axios from 'axios';
-import { Link} from "react-router-dom";
 import './New.css'
 
-const New = () => {
+const New = ({setModal}) => {
 
     const [inputList, setInputList] = useState({title : "", content : "", tag : ""});
 
@@ -15,6 +14,7 @@ const New = () => {
     };
 
     const clickHandler_Add = event =>{
+        console.log('Add')
         if (title == ""){
             alert('Title is empty');
             event.preventDefault();
@@ -31,46 +31,41 @@ const New = () => {
                 title: title,
                 content: content,
                 tag: tag,
-            });  
+            }).then(()=>setModal(false));  
+            window.location.reload();
         }
     };
 
-    const clickHandler_Back = () =>{
-        console.log('Backs');
-    };
-
     return (
-        <div>
-            <p className = "space"></p>
-            <div className = "New">
-                <input
-                    value={title}
-                    placeholder="Title"
-                    name="title"
-                    onChange={changed}
-                ></input>
-                <br></br>
-                <input
-                    value={content}
-                    placeholder="Content"
-                    name="content"
-                    onChange={changed}
-                ></input>
-                <br></br>
-                <input 
-                    value={tag}
-                    placeholder="#tag"
-                    name="tag"
-                    onChange={changed}
-                ></input>
-                <br></br>
+        <div className = 'Modal' onCLick={()=> setModal(false)}>
+            <div className = 'modalBody'>
+                <p className = "space"></p>
+                <div className = "New">
+                    <input
+                        value={title}
+                        placeholder="Title"
+                        name="title"
+                        onChange={changed}
+                    ></input>
+                    <br></br>
+                    <input
+                        value={content}
+                        placeholder="Content"
+                        name="content"
+                        onChange={changed}
+                    ></input>
+                    <br></br>
+                    <input 
+                        value={tag}
+                        placeholder="#tag"
+                        name="tag"
+                        onChange={changed}
+                    ></input>
+                    <br></br>
+                    <button onClick={()=> setModal(false)} className = 'btn'>←</button>
+                    <button onClick={clickHandler_Add} className='btn'>Add MEMO</button>
+                </div>
             </div>
-            <Link to = '/' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                <button onClick={clickHandler_Back} className = 'Back'>←</button>
-            </Link>
-            <Link to='/' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                    <button onClick={clickHandler_Add} className='Add'>Add MEMO</button>
-            </Link>
         </div>
     )
 };

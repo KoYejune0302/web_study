@@ -9,7 +9,6 @@ import {
 import './index.css';
 import App from './App';
 import Detail from './Detail';
-import New from './New';
 import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById("root");
@@ -18,7 +17,6 @@ const rootElement = document.getElementById("root");
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="detail" element={<Detail />} />
-        <Route path="new" element={<New />} />
       </Routes>
     </BrowserRouter>,
     rootElement

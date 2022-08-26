@@ -1,8 +1,12 @@
 import './App.css';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Component } from 'react'
 import axios from 'axios';
 import Box from './Box.js'
 import { Link } from "react-router-dom";
+import Modal from 'react-modal';
+import New from './New.js';
+
+Modal.setAppElement('#root');
 
 const App = () =>{
 
@@ -10,6 +14,8 @@ const App = () =>{
   const {tag} = inputList;
 
   const [result, setResult] = useState([{title : '', content : '', tag : ''}]);
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/note/")
@@ -30,18 +36,14 @@ const App = () =>{
   };
 
   const clickHandler_Add = () =>{
-    console.log("ADD");
+    setModalIsOpen(true);
   };
 
   const clickHandler_re = () =>{
-    console.log("Re");
     tag = "";
   };
 
   const clickHandler_Search = () =>{
-    // 입력 형태 검사
-    // 형태가 이상하면 alert
-    // 형태가 제대로 되있다면 search
     console.log("Search");
     console.log(tag);
     const url = "http://127.0.0.1:8000/note/?search="+tag;
@@ -76,10 +78,12 @@ const App = () =>{
       </div>
 
       <div className = "plus">
-        <Link to= '/new' clasName='Link' style={{ color: 'inherit', textDecoration: 'inherit'}}>
           <button type='button' className='w-btn w-btn-gra1 btn-holder' onClick={clickHandler_Add}>Add MEMO</button>
-        </Link>
       </div>
+
+      <Modal isOpen={modalIsOpen} className = 'modal'>
+        <New setModal={setModalIsOpen}/>
+      </Modal>
 
     </div>
   );
