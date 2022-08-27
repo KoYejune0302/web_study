@@ -18,7 +18,6 @@ const Box = ({id, title, content, tag}) => {
             >
                 <div className = "Box">
                     <p className = "title">{title}</p>
-                    {/* <p className = "content">{content}</p> */}
                     <p className = "tag">{tag}</p>
                 </div>
             </Link>
