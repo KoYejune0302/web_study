@@ -26,7 +26,6 @@ const New = ({setModal}) => {
             event.preventDefault();
         } else{
             console.log(inputList);
-            //입력값 검증 추가
             axios.post("http://127.0.0.1:8000/note/", {
                 title: title,
                 content: content,
